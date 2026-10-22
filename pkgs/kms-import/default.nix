@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1m5hmghsr3szj5hl4vmb6053iywrhm3fkh7mgjrnr7wbfgcznk63";
-    aarch64-linux = "0sxvinq6i6d130dcdvc8lf2dbcdaxa81kh4pd7n5hs7hcmpy7bc2";
-    x86_64-darwin = "1ih4c0ms8ykbk45ykjk53lqmxfq3pk8l7zqchv1qq56bz6qnzldd";
-    aarch64-darwin = "15iajcbfrd94zfjg47n35m2rijhr66x30y5bpyjfvg8myq3bm2ds";
+    x86_64-linux = "0hnxyq02h81nvlwzh1jrglgywb7l9i9kr5jq112kny79wspz20y2";
+    aarch64-linux = "0mhncxz7k8fc37cppjg6j5yra3ywxr94w5s6ms3vy1kammypdjyf";
+    x86_64-darwin = "0g59drn0r4vkgn06h3c10kxikcryzqf69pc45vlyzy6dr2l898rl";
+    aarch64-darwin = "0m4bpmnxvaxlqyda95wwsawynsbsqj51x8cpx4xh7d3insg9sms9";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/chinmina/kms-import/releases/download/v1.2.0/kms-import_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/chinmina/kms-import/releases/download/v1.2.0/kms-import_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/chinmina/kms-import/releases/download/v1.2.0/kms-import_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/chinmina/kms-import/releases/download/v1.2.0/kms-import_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/chinmina/kms-import/releases/download/v1.2.1/kms-import_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/chinmina/kms-import/releases/download/v1.2.1/kms-import_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/chinmina/kms-import/releases/download/v1.2.1/kms-import_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/chinmina/kms-import/releases/download/v1.2.1/kms-import_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "kms-import";
-  version = "1.2.0";
+  version = "1.2.1";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
