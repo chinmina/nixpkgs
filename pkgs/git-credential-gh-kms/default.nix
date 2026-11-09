@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "11xbbissp6bnj465lb669b8m7adzc9rjd7zc2yycxhsjsxilivyj";
-    aarch64-linux = "1h4lvq3ysdiw4nxx7jp4kcv4j29z6cr97wfjjfi1rskafy1kcac9";
-    x86_64-darwin = "01plgjn3yqpjfqyqw9gr3ckdkw9hx49vi4d9qzxsg8n1ivzwshkj";
-    aarch64-darwin = "0qma5i2ibcxiwxfwz5w1vyi9qyv1rxa8v6q75dpridf00856pzr4";
+    x86_64-linux = "06b8mc8gb3afirzd3h4b05ghskzs040ggkgqq2y8fj5i21avy4fj";
+    aarch64-linux = "1184ai021ph9n012gls9cbzvnphl7rvh111am53zavgfwrgg4mc9";
+    x86_64-darwin = "1cmjb9va4j5yaj5mdpgjqm7h8i7iscpbb4jrk55lj35fdjzc7vly";
+    aarch64-darwin = "1y80zr2xhzixb8mnwa15miqrccmlcr5bxdvqpi5vcwhm1dbadz6f";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v0.1.1/git-credential-gh-kms_linux_amd64.tar.gz";
-    aarch64-linux = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v0.1.1/git-credential-gh-kms_linux_arm64.tar.gz";
-    x86_64-darwin = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v0.1.1/git-credential-gh-kms_darwin_amd64.tar.gz";
-    aarch64-darwin = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v0.1.1/git-credential-gh-kms_darwin_arm64.tar.gz";
+    x86_64-linux = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v1.0.0/git-credential-gh-kms_linux_amd64.tar.gz";
+    aarch64-linux = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v1.0.0/git-credential-gh-kms_linux_arm64.tar.gz";
+    x86_64-darwin = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v1.0.0/git-credential-gh-kms_darwin_amd64.tar.gz";
+    aarch64-darwin = "https://github.com/chinmina/git-credential-gh-kms/releases/download/v1.0.0/git-credential-gh-kms_darwin_arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "git-credential-gh-kms";
-  version = "0.1.1";
+  version = "1.0.0";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
